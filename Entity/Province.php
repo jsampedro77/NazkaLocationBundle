@@ -37,6 +37,11 @@ class Province
     private $country;
 
     /**
+     * @ORM\OneToMany(targetEntity="Province", mappedBy="province")
+     */
+    protected $provinces;
+
+    /**
      * Get id
      *
      * @return integer

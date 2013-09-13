@@ -1,0 +1,5 @@
+Nazka\LocationBundle\Entity\Country:
+  c_spain:
+    name: España
+    translations: {name : {en : Spain}}
+

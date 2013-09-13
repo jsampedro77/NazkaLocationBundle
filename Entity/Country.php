@@ -30,9 +30,14 @@ class Country
     protected $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Province", mappedBy="country",  orphanRemoval=true,  cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Province", mappedBy="country",  cascade={"persist"})
      */
     protected $provinces;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Address", mappedBy="country")
+     */
+    protected $adresses;
 
     /**
      * @ORM\OneToMany(targetEntity="CountryTranslation", mappedBy="object", cascade={"persist", "remove"}, orphanRemoval=true)
