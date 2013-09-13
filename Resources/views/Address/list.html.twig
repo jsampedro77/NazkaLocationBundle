@@ -1,0 +1,105 @@
+<div id="ajax-address">
+{% for address in addresses%}
+<span class="row-fluid">
+    <span class="span1">
+        <a href="#" class="edit-address-btn" address-id="{{address.id}}"><i class="icon-edit"> </i></a>
+        <br>
+        <a href="#" class="remove-address-btn" address-id="{{address.id}}" confirm-message="{{'address.remove.confirm' | trans({}, 'common')}}"><i class="icon-remove"> </i></a>
+    </span>
+
+    <span class="span11">
+        <address>
+            <strong>{{address.name}}</strong><br>
+            {{address.address}}<br>
+            {{address.city}},  {{address.postalCode}} <br>
+            {{address.zone}} ({{address.country}})
+        </address>
+    </span>
+</span>
+{%endfor%}
+
+<a  class="btn btn-success new-address-btn" user-id="{{userId}}">{{ 'views.new.create' | trans({}, 'common')}}</a>
+
+  <!-- Modal -->
+  <div class="modal fade" id="address-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">{{'edit.address' | trans({}, 'common')}}</h4>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div>
+
+<script language="javascript">
+    $().ready(function(){
+        modal = $("#address-modal");
+
+        $(".edit-address-btn").click(function(){
+
+                var url = Routing.generate('nazka_address_edit', {
+                    'id': $(this).attr('address-id')
+                });
+
+                $.ajax({
+                    url: url,
+                    success: function(data){
+                        $(".modal-body", modal).html(data);
+                        modal.modal('show');
+                    }
+                });
+        });
+
+        $(".remove-address-btn").click(function(){
+            addressId = $(this).attr('address-id');
+            bootbox.confirm($(this).attr('confirm-message'), function(result){
+                if(result){
+                    var url = Routing.generate('nazka_address_remove', {
+                        'id': addressId
+                    });
+
+                    $.ajax({
+                        url: url,
+                        success: function(data){
+                            modal.modal("hide");
+                            $("#ajax-address").replaceWith(data);
+                        }
+                    });
+                }
+            });
+        });
+
+        $(".new-address-btn").click(function(){
+
+                var url = Routing.generate('nazka_address_new', {
+                    'userId': $(this).attr('user-id')
+                });
+
+                $.ajax({
+                    url: url,
+                    success: function(data){
+                        $(".modal-body", modal).html(data);
+                        modal.modal('show');
+                    }
+                });
+        });
+
+        $(modal).on("submit", "#address-form", function(e){
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                type: "POST",
+                data: $(this).serialize(),
+                success: function(data) {
+                    modal.modal("hide");
+                    $("#ajax-address").replaceWith(data);
+                }
+            });
+        });
+
+    });
+</script>

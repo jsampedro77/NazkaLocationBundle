@@ -1,0 +1,4 @@
+<form class="form-horizontal" id="address-form" method="POST" action="{{path('nazka_address_new', {'userId':userId})}}">
+{{form_widget(form)}}
+        <button type="submit" class="btn btn-primary" >{{'submit' | trans({}, 'common')}}</button>
+</form>

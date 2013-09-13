@@ -1,0 +1,27 @@
+nazka_location_get_zones_from_country:
+    pattern:  /ajax/zones-for-country/{countryId}
+    defaults: { _controller: NazkaLocationBundle:Ajax:zonesForCountry, countryId: null }
+    options:
+      expose: true
+
+nazka_user_address_list:
+    pattern:  /secured/address/user/{userId}/list
+    defaults: { _controller: NazkaLocationBundle:Address:userAddresses}
+
+nazka_address_edit:
+    pattern:  /secured/user/address/{id}/edit
+    defaults: { _controller: NazkaLocationBundle:Address:edit, id: null}
+    options:
+      expose: true
+
+nazka_address_new:
+    pattern:  /secured/user/{userId}/address/new
+    defaults: { _controller: NazkaLocationBundle:Address:new}
+    options:
+      expose: true
+
+nazka_address_remove:
+    pattern:  /secured/address/{id}/remove
+    defaults: { _controller: NazkaLocationBundle:Address:remove}
+    options:
+      expose: true
