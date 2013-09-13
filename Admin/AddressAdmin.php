@@ -56,12 +56,12 @@ class AddressAdmin extends Admin
     {
 
         $formMapper
-                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
-                ->add('address', null, array('label' => $this->trans('address', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
-                ->add('city', null, array('label' => $this->trans('city', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
-                ->add('postalCode', null, array('label' => $this->trans('postal.code', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
-                ->add('country', null, array('label' => $this->trans('country', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
-                ->add('province', null, array('label' => $this->trans('zone', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('address', null, array('label' => $this->trans('address', array(), 'location-bundle')))
+                ->add('city', null, array('label' => $this->trans('city', array(), 'location-bundle')))
+                ->add('postalCode', null, array('label' => $this->trans('postal.code', array(), 'location-bundle')))
+                ->add('country', null, array('label' => $this->trans('country', array(), 'location-bundle')))
+                ->add('province', null, array('label' => $this->trans('province', array(), 'location-bundle')))
         ;
     }
 
