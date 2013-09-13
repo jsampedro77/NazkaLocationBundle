@@ -26,9 +26,9 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-0": { "Nazka\\Bundle\\LocationBundle": "" }
+        "psr-0": { "Nazka\\LocationBundle": "" }
     },
-    "target-dir": "Nazka/Bundle/LocationBundle",
+    "target-dir": "Nazka/LocationBundle",
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
