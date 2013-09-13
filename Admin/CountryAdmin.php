@@ -11,7 +11,6 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class CountryAdmin extends Admin
 {
-
     //Last components first in List
     protected $datagridValues = array(
         '_page' => 1,
@@ -28,7 +27,7 @@ class CountryAdmin extends Admin
     {
         $listMapper
                 ->addIdentifier('name', null, array(
-                    /** @Ignore */'label' => $this->trans('name', array(), 'common')
+                    'label' => $this->trans('name', array(), 'location-bundle')
                 ))
         ;
     }
@@ -36,14 +35,14 @@ class CountryAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
         ;
     }
 
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
         ;
     }
 
@@ -51,24 +50,23 @@ class CountryAdmin extends Admin
     {
 
         $formMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
-                ->add('translations', 'a2lix_translations_gedmo', array(                     'translatable_class' => $this->getClass(),
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('translations', 'a2lix_translations_gedmo', array('translatable_class' => $this->getClass(),
                     'by_reference' => false,
                     'fields' => array(
-                        'name' => array(/** @Ignore */'label' => $this->trans('name', array(), 'common')),
-                        )))
-                ->add('zones', 'sonata_type_collection', array(
+                        'name' => array('label' => $this->trans('name', array(), 'location-bundle')),
+            )))
+                ->add('provinces', 'sonata_type_collection', array(
                     'required' => false,
                     'by_reference' => false,
-                    /** @Ignore */'label' => $this->trans('zones', array(), 'common')
+                    'label' => $this->trans('provinces', array(), 'location-bundle')
                         ), array(
                     'edit' => 'inline',
                     'inline' => 'table',
                     'link_parameters' => array('context' => 'default'),
-                    'help' => $this->trans('add.zone', array(), 'admin')
+                    'help' => $this->trans('add.province', array(), 'location-bundle')
                         )
                 )
         ;
     }
-
 }

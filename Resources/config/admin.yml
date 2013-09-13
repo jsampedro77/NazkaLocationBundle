@@ -5,11 +5,11 @@ services:
         - { name: sonata.admin, manager_type: orm, label: Paises }
       arguments: [null, Nazka\LocationBundle\Entity\Country, SonataAdminBundle:CRUD]
 
-   nazka.location.admin.zone:
-      class: Nazka\LocationBundle\Admin\ZoneAdmin
+   nazka.location.admin.province:
+      class: Nazka\LocationBundle\Admin\ProvinceAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, label: Provincias }
-      arguments: [null, Nazka\LocationBundle\Entity\Zone, SonataAdminBundle:CRUD]
+      arguments: [null, Nazka\LocationBundle\Entity\Province, SonataAdminBundle:CRUD]
 
    nazka.location.admin.address:
       class: Nazka\LocationBundle\Admin\AddressAdmin

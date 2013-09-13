@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Nazka\LocationBundle\Entity\Country
  * @Gedmo\TranslationEntity(class="Nazka\LocationBundle\Entity\CountryTranslation")
  * @ORM\Table()
  * @ORM\Entity
@@ -37,7 +36,7 @@ class Country
     /**
      * @ORM\OneToMany(targetEntity="Address", mappedBy="country")
      */
-    protected $adresses;
+    protected $addresses;
 
     /**
      * @ORM\OneToMany(targetEntity="CountryTranslation", mappedBy="object", cascade={"persist", "remove"}, orphanRemoval=true)
@@ -76,8 +75,29 @@ class Country
 
     public function __construct()
     {
+        $this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
         $this->provinces = new \Doctrine\Common\Collections\ArrayCollection();
         $this->translations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add Address
+     * 
+     * @param \Nazka\LocationBundle\Entity\Address $address
+     */
+    public function addAddress(\Nazka\LocationBundle\Entity\Address $address)
+    {
+        $this->addresses[] = $address;
+        $address->setCountry($this);
+    }
+
+    /**
+     *
+     * @return type
+     */
+    public function getProvinces()
+    {
+        return $this->provinces;
     }
 
     /**
@@ -96,59 +116,9 @@ class Country
         $this->addProvince($provinces);
     }
 
-    /**
-     * Get provinces
-     *
-     * @return Doctrine\Common\Collections\Collection
-     */
-    public function getProvinces()
-    {
-        return $this->provinces;
-    }
-
-    /**
-     * Add users
-     *
-     * @param Nazka\UserBundle\Entity\User $users
-     */
-    public function addUser(\Nazka\UserBundle\Entity\User $users)
-    {
-        $this->users[] = $users;
-    }
-
-    /**
-     * Get users
-     *
-     * @return Doctrine\Common\Collections\Collection
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
     public function __toString()
     {
         return $this->getName()? : '---';
-    }
-
-    /**
-     * Remove provinces
-     *
-     * @param Nazka\LocationBundle\Entity\Province $provinces
-     */
-    public function removeProvince(\Nazka\LocationBundle\Entity\Province $provinces)
-    {
-        $this->provinces->removeElement($provinces);
-    }
-
-    /**
-     * Remove users
-     *
-     * @param Nazka\UserBundle\Entity\User $users
-     */
-    public function removeUser(\Nazka\UserBundle\Entity\User $users)
-    {
-        $this->users->removeElement($users);
     }
 
     /**

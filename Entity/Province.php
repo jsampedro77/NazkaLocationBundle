@@ -37,9 +37,9 @@ class Province
     private $country;
 
     /**
-     * @ORM\OneToMany(targetEntity="Province", mappedBy="province")
+     * @ORM\OneToMany(targetEntity="Address", mappedBy="province")
      */
-    protected $provinces;
+    protected $addresses;
 
     /**
      * Get id

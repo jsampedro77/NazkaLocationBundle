@@ -9,9 +9,8 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-class ZoneAdmin extends Admin
+class ProvinceAdmin extends Admin
 {
-
     //Last components first in List
     protected $datagridValues = array(
         '_page' => 1,
@@ -19,29 +18,26 @@ class ZoneAdmin extends Admin
         '_sort_by' => 'name' // field name
     );
 
-
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-        ->addIdentifier('name', null, array(
-        /** @Ignore */'label' => $this->trans('name', array(), 'common')
-        ))
+                ->addIdentifier('name', null, array(
+                    'label' => $this->trans('name', array(), 'location-bundle')
+                ))
         ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $stateChoices = new StateChoices();
-
         $datagridMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
         ;
     }
 
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
         ;
     }
 
@@ -49,8 +45,7 @@ class ZoneAdmin extends Admin
     {
 
         $formMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
         ;
     }
-
 }

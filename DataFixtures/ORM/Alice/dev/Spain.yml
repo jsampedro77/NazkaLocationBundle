@@ -1,5 +1,16 @@
 Nazka\LocationBundle\Entity\Country:
   c_spain:
     name: España
-    translations: {name : {en : Spain}}
+
+Nazka\LocationBundle\Entity\CountryTranslation:
+  t_spain:
+    locale: en
+    field: name
+    content: Spain
+    object: @c_spain
+
+Nazka\LocationBundle\Entity\Province:
+  p{Albacete, Cuenca}:
+    name: <current()>
+    country: @c_spain
 

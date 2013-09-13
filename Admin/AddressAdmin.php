@@ -28,7 +28,7 @@ class AddressAdmin extends Admin
     {
         $listMapper
                 ->addIdentifier('name', null, array(
-                    /** @Ignore */'label' => $this->trans('name', array(), 'common')
+                    'label' => $this->trans('name', array(), 'location-bundle')
                 ))
         ;
     }
@@ -36,19 +36,19 @@ class AddressAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
         ;
     }
 
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common')))
-                ->add('address', null, array(/** @Ignore */'label' => $this->trans('address', array(), 'common')))
-                ->add('city', null, array(/** @Ignore */'label' => $this->trans('city', array(), 'common')))
-                ->add('postalCode', null, array(/** @Ignore */'label' => $this->trans('postal.code', array(), 'common')))
-                ->add('country', null, array(/** @Ignore */'label' => $this->trans('country', array(), 'common')))
-                ->add('zone', null, array(/** @Ignore */'label' => $this->trans('zone', array(), 'common')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('address', null, array('label' => $this->trans('address', array(), 'location-bundle')))
+                ->add('city', null, array('label' => $this->trans('city', array(), 'location-bundle')))
+                ->add('postalCode', null, array('label' => $this->trans('postal.code', array(), 'location-bundle')))
+                ->add('country', null, array('label' => $this->trans('country', array(), 'location-bundle')))
+                ->add('province', null, array('label' => $this->trans('zone', array(), 'location-bundle')))
         ;
     }
 
@@ -56,12 +56,12 @@ class AddressAdmin extends Admin
     {
 
         $formMapper
-                ->add('name', null, array(/** @Ignore */'label' => $this->trans('name', array(), 'common'),'attr' => array('class' => 'span12')))
-                ->add('address', null, array(/** @Ignore */'label' => $this->trans('address', array(), 'common'),'attr' => array('class' => 'span12')))
-                ->add('city', null, array(/** @Ignore */'label' => $this->trans('city', array(), 'common'),'attr' => array('class' => 'span12')))
-                ->add('postalCode', null, array(/** @Ignore */'label' => $this->trans('postal.code', array(), 'common'),'attr' => array('class' => 'span12')))
-                ->add('country', null, array(/** @Ignore */'label' => $this->trans('country', array(), 'common'),'attr' => array('class' => 'span12')))
-                ->add('zone', null, array(/** @Ignore */'label' => $this->trans('zone', array(), 'common'),'attr' => array('class' => 'span12')))
+                ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
+                ->add('address', null, array('label' => $this->trans('address', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
+                ->add('city', null, array('label' => $this->trans('city', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
+                ->add('postalCode', null, array('label' => $this->trans('postal.code', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
+                ->add('country', null, array('label' => $this->trans('country', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
+                ->add('province', null, array('label' => $this->trans('zone', array(), 'location-bundle'),'attr' => array('class' => 'span12')))
         ;
     }
 
