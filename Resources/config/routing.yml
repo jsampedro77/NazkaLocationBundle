@@ -1,6 +1,6 @@
-nazka_location_get_zones_from_country:
-    pattern:  /ajax/zones-for-country/{countryId}
-    defaults: { _controller: NazkaLocationBundle:Ajax:zonesForCountry, countryId: null }
+nazka_location_get_provinces_from_country:
+    pattern:  /ajax/provinces-for-country/{countryId}
+    defaults: { _controller: NazkaLocationBundle:Ajax:provincesForCountry, countryId: null }
     options:
       expose: true
 

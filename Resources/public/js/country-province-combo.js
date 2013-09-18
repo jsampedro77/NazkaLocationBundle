@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
     var parent = $('select[name*="[country]"]');
-    var child = $('select[name*="[zone]"]');
+    var child = $('select[name*="[province]"]');
 
-    var route_name = 'nazka_location_get_zones_from_country';
+    var route_name = 'nazka_location_get_provinces_from_country';
 
     var childId = child.val();
     parent.change(updateChildren()); // Bind the function to update

@@ -13,23 +13,23 @@ use Symfony\Component\HttpFoundation\Response;
 class AjaxController extends Controller
 {
 
-    public function zonesForCountryAction($countryId)
+    public function provincesForCountryAction($countryId)
     {
 
-        $zones = array();
+        $provinces = array();
         
         if ($countryId) {
             $country = $this->get('doctrine')->getManager()->getRepository('NazkaLocationBundle:Country')->find($countryId);
 
 
-            foreach ($country->getZones() as $zone) {
-                $zones[] = array(
-                    'id' => $zone->getId(),
-                    'name' => $zone->getName());
+            foreach ($country->getProvinces() as $province) {
+                $provinces[] = array(
+                    'id' => $province->getId(),
+                    'name' => $province->getName());
             }
         }
 
-        return new Response(json_encode($zones));
+        return new Response(json_encode($provinces));
     }
 
 }
