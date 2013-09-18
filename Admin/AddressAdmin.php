@@ -11,7 +11,6 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class AddressAdmin extends Admin
 {
-
     //Last components first in List
     protected $datagridValues = array(
         '_page' => 1,
@@ -64,5 +63,4 @@ class AddressAdmin extends Admin
                 ->add('province', null, array('label' => $this->trans('province', array(), 'location-bundle')))
         ;
     }
-
 }

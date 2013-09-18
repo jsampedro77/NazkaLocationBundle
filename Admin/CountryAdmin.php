@@ -29,6 +29,9 @@ class CountryAdmin extends Admin
                 ->addIdentifier('name', null, array(
                     'label' => $this->trans('name', array(), 'location-bundle')
                 ))
+                ->addIdentifier('isoCode', null, array(
+                    'label' => $this->trans('iso.code', array(), 'location-bundle')
+                ))
         ;
     }
 
@@ -43,6 +46,9 @@ class CountryAdmin extends Admin
     {
         $showMapper
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('isoCode', null, array(
+                    'label' => $this->trans('iso.code', array(), 'location-bundle')
+                ))
         ;
     }
 
@@ -51,6 +57,9 @@ class CountryAdmin extends Admin
 
         $formMapper
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('isoCode', null, array(
+                    'label' => $this->trans('iso.code', array(), 'location-bundle')
+                ))
                 ->add('translations', 'a2lix_translations_gedmo', array('translatable_class' => $this->getClass(),
                     'by_reference' => false,
                     'fields' => array(

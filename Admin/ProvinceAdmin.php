@@ -24,6 +24,9 @@ class ProvinceAdmin extends Admin
                 ->addIdentifier('name', null, array(
                     'label' => $this->trans('name', array(), 'location-bundle')
                 ))
+                ->addIdentifier('isoCode', null, array(
+                    'label' => $this->trans('iso.code', array(), 'location-bundle')
+                ))
         ;
     }
 
@@ -38,6 +41,9 @@ class ProvinceAdmin extends Admin
     {
         $showMapper
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('isoCode', null, array(
+                    'label' => $this->trans('iso.code', array(), 'location-bundle')
+                ))
         ;
     }
 
@@ -46,6 +52,9 @@ class ProvinceAdmin extends Admin
 
         $formMapper
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('isoCode', null, array(
+                    'label' => $this->trans('iso.code', array(), 'location-bundle')
+                ))
         ;
     }
 }
