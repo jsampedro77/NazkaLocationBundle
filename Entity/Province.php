@@ -29,6 +29,13 @@ class Province
     private $name;
 
     /**
+     * @var string $name
+     *
+     * @ORM\Column(name="iso_code", type="string", length=6)
+     */
+    private $isoCode;
+
+    /**
      * @var integer $country_id
      *
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="provinces")
@@ -69,6 +76,26 @@ class Province
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set isoCode
+     *
+     * @param string $isoCode
+     */
+    public function setIsoCode($isoCode)
+    {
+        $this->isoCode = $isoCode;
+    }
+
+    /**
+     * Get isoCode
+     *
+     * @return string
+     */
+    public function getIsoCode()
+    {
+        return $this->isoCode;
     }
 
     public function __construct()

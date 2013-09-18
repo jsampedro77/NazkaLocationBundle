@@ -16,7 +16,7 @@ class AddressType extends AbstractType
             ->add('city', null, array('required' => true))
             ->add('postalCode', null, array('required' => true))
             ->add('country', null, array('required' => true))
-            ->add('zone', null, array('required' => true))
+            ->add('province', null, array('required' => true))
         ;
     }
 

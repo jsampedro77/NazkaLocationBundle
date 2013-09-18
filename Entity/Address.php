@@ -4,6 +4,8 @@ namespace Nazka\LocationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Address
  *
@@ -30,18 +32,21 @@ class Address
     /**
      * @var string $name
      * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     * @Assert\NotNull()
      */
     private $address;
 
     /**
      * @var string $city
      * @ORM\Column(name="city", type="string", length=255, nullable=true)
+     * @Assert\NotNull()
      */
     private $city;
 
     /**
      * @var string $postalCode
      * @ORM\Column(name="postal_code", type="string", length=255, nullable=true)
+     * @Assert\NotNull()
      */
     private $postalCode;
 
@@ -50,6 +55,7 @@ class Address
      *
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="addresses", cascade={"persist"})
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=true)
+     * @Assert\NotNull()
      */
     private $country;
 
@@ -58,6 +64,7 @@ class Address
      *
      * @ORM\ManyToOne(targetEntity="Province", inversedBy="addresses", cascade={"persist"})
      * @ORM\JoinColumn(name="province_id", referencedColumnName="id", nullable=true)
+     * @Assert\NotNull()
      */
     private $province;
 

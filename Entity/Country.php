@@ -29,6 +29,13 @@ class Country
     protected $name;
 
     /**
+     * @var string $name
+     *
+     * @ORM\Column(name="iso_code", type="string", length=2)
+     */
+    private $isoCode;
+
+    /**
      * @ORM\OneToMany(targetEntity="Province", mappedBy="country",  cascade={"persist"})
      */
     protected $provinces;
@@ -71,6 +78,26 @@ class Country
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set isoCode
+     *
+     * @param string $isoCode
+     */
+    public function setIsoCode($isoCode)
+    {
+        $this->isoCode = $isoCode;
+    }
+
+    /**
+     * Get isoCode
+     *
+     * @return string
+     */
+    public function getIsoCode()
+    {
+        return $this->isoCode;
     }
 
     public function __construct()
