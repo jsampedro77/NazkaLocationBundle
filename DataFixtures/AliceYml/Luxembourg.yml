@@ -1,0 +1,1 @@
+{ Nazka\LocationBundle\Entity\Country: { country_LU: { name: Luxembourg, isoCode: LU } }, Nazka\LocationBundle\Entity\Province: { province_LU-D: { name: Diekirch, country: '@country_LU', isoCode: LU-D }, province_LU-G: { name: Grevenmacher, country: '@country_LU', isoCode: LU-G }, province_LU-L: { name: Luxembourg, country: '@country_LU', isoCode: LU-L } } }

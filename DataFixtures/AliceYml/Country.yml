@@ -1,0 +1,1 @@
+{ Nazka\LocationBundle\Entity\Country: { country_ISO: { name: Country, isoCode: ISO } }, Nazka\LocationBundle\Entity\Province: { province_ISO2: { name: Region, country: '@country_ISO', isoCode: ISO2 } } }
