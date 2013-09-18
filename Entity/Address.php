@@ -3,7 +3,7 @@
 namespace Nazka\LocationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -21,34 +21,37 @@ class Address
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string $name
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string $name
      * @ORM\Column(name="address", type="string", length=255, nullable=true)
      * @Assert\NotNull()
+     * @Serializer\Groups({"details"})
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string $city
      * @ORM\Column(name="city", type="string", length=255, nullable=true)
      * @Assert\NotNull()
+     * @Serializer\Groups({"details"})
      */
-    private $city;
+    protected $city;
 
     /**
      * @var string $postalCode
      * @ORM\Column(name="postal_code", type="string", length=255, nullable=true)
      * @Assert\NotNull()
+     * @Serializer\Groups({"details"})
      */
-    private $postalCode;
+    protected $postalCode;
 
     /**
      * @var country
@@ -56,8 +59,9 @@ class Address
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="addresses", cascade={"persist"})
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=true)
      * @Assert\NotNull()
+     * @Serializer\Groups({"details"})
      */
-    private $country;
+    protected $country;
 
     /**
      * @var $province
@@ -65,8 +69,9 @@ class Address
      * @ORM\ManyToOne(targetEntity="Province", inversedBy="addresses", cascade={"persist"})
      * @ORM\JoinColumn(name="province_id", referencedColumnName="id", nullable=true)
      * @Assert\NotNull()
+     * @Serializer\Groups({"details"})
      */
-    private $province;
+    protected $province;
 
     /**
      * Get id

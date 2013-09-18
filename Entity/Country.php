@@ -4,6 +4,7 @@ namespace Nazka\LocationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @Gedmo\TranslationEntity(class="Nazka\LocationBundle\Entity\CountryTranslation")
@@ -25,6 +26,7 @@ class Country
      * @var string $name
      * @Gedmo\Translatable
      * @ORM\Column(name="name", type="string", length=255)
+     * @Serializer\Groups({"details"})
      */
     protected $name;
 
@@ -32,8 +34,9 @@ class Country
      * @var string $name
      *
      * @ORM\Column(name="iso_code", type="string", length=2)
+     * @Serializer\Groups({"details"})
      */
-    private $isoCode;
+    protected $isoCode;
 
     /**
      * @ORM\OneToMany(targetEntity="Province", mappedBy="country",  cascade={"persist"})
@@ -48,7 +51,7 @@ class Country
     /**
      * @ORM\OneToMany(targetEntity="CountryTranslation", mappedBy="object", cascade={"persist", "remove"}, orphanRemoval=true)
      */
-    private $translations;
+    protected $translations;
 
     /**
      * Get id

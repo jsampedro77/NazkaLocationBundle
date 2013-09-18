@@ -3,6 +3,7 @@
 namespace Nazka\LocationBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Nazka\LocationBundle\Entity\Province
@@ -19,21 +20,23 @@ class Province
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Serializer\Groups({"details"})
      */
-    private $name;
+    protected $name;
 
     /**
      * @var string $name
      *
      * @ORM\Column(name="iso_code", type="string", length=6)
+     * @Serializer\Groups({"details"})
      */
-    private $isoCode;
+    protected $isoCode;
 
     /**
      * @var integer $country_id
@@ -41,7 +44,7 @@ class Province
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="provinces")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id")
      */
-    private $country;
+    protected $country;
 
     /**
      * @ORM\OneToMany(targetEntity="Address", mappedBy="province")
