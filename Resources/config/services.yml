@@ -2,9 +2,38 @@ imports:
     - { resource: admin.yml }
 
 parameters:
-#    nazka_location.example.class: Nazka\LocationBundle\Example
+    nazka_location.province.repository.class: Doctrine\ORM\EntityRepository
+    nazka_location.country.repository.class: Doctrine\ORM\EntityRepository
+    nazka_location.province.class: Nazka\LocationBundle\Entity\Province
+    nazka_location.country.class: Nazka\LocationBundle\Entity\Country
+    nazka_location.province_iso.form.type.class: Nazka\LocationBundle\Form\Type\ProvinceIsoType
+    nazka_location.country_iso.form.type.class: Nazka\LocationBundle\Form\Type\CountryIsoType
 
 services:
-#    nazka_location.example:
-#        class: %nazka_location.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    #Repositories
+    nazka_location.province.repository:
+        class:           %nazka_location.province.repository.class%
+        factory_service: doctrine.orm.entity_manager
+        factory_method:  getRepository
+        arguments:
+            - %nazka_location.province.class%
+
+    nazka_location.country.repository:
+        class:           %nazka_location.country.repository.class%
+        factory_service: doctrine.orm.entity_manager
+        factory_method:  getRepository
+        arguments:
+            - %nazka_location.country.class%
+
+    #Form Types
+    nazka_location.province_iso.form.type:
+        class: %nazka_location.province_iso.form.type.class%
+        arguments: [@nazka_location.province.repository]
+        tags:
+            - { name: form.type, alias: nazka_location_province_iso_type }
+
+    nazka_location.country_iso.form.type:
+        class: %nazka_location.country_iso.form.type.class%
+        arguments: [@nazka_location.country.repository]
+        tags:
+            - { name: form.type, alias: nazka_location_country_iso_type }
