@@ -8,8 +8,15 @@ parameters:
     nazka_location.country.class: Nazka\LocationBundle\Entity\Country
     nazka_location.province_iso.form.type.class: Nazka\LocationBundle\Form\Type\ProvinceIsoType
     nazka_location.country_iso.form.type.class: Nazka\LocationBundle\Form\Type\CountryIsoType
+    nazka_location.manager.class: Nazka\LocationBundle\Manager\LocationManager
 
 services:
+    #Manager
+    nazka_location.manager:
+        class: %nazka_location.manager.class%
+        arguments: [@nazka_location.country.repository, @nazka_location.province.repository]
+        lazy: true
+
     #Repositories
     nazka_location.province.repository:
         class:           %nazka_location.province.repository.class%
