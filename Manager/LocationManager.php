@@ -21,7 +21,7 @@ class LocationManager
     }
 
     public function findCountryByIso($isoCode)
-    {ldd($isoCode);
+    {
         return $this->countryRepository->findOneByIsoCode($isoCode);
     }
 
