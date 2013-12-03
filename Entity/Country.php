@@ -54,6 +54,14 @@ class Country
     protected $translations;
 
     /**
+     * @var string $enabled
+     *
+     * @ORM\Column(name="enabled", type="boolean")
+     * @Serializer\Groups({"details"})
+     */
+    protected $enabled  = false;
+
+    /**
      * Get id
      *
      * @return integer
@@ -101,6 +109,26 @@ class Country
     public function getIsoCode()
     {
         return $this->isoCode;
+    }
+
+    /**
+     * Set enabled
+     *
+     * @param boolean $enabled
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+    }
+
+    /**
+     * Get enabled
+     *
+     * @return boolean
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
     }
 
     public function __construct()

@@ -60,6 +60,9 @@ class CountryAdmin extends Admin
                 ->add('isoCode', null, array(
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
                 ))
+                ->add('enabled', null, array(
+                    'label' => $this->trans('enabled', array(), 'location-bundle')
+                ))
                 ->add('translations', 'a2lix_translations_gedmo', array('translatable_class' => $this->getClass(),
                     'by_reference' => false,
                     'fields' => array(
