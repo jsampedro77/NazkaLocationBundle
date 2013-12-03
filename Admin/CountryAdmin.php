@@ -14,7 +14,7 @@ class CountryAdmin extends Admin
     //Last components first in List
     protected $datagridValues = array(
         '_page' => 1,
-        '_sort_order' => 'DESC', // sort direction
+        '_sort_order' => 'ASC', // sort direction
         '_sort_by' => 'name' // field name
     );
 
