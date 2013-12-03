@@ -18,7 +18,8 @@
         "stof/doctrine-extensions-bundle": "1.1.*",
         "friendsofsymfony/jsrouting-bundle": "dev-master",
         "genemu/form-bundle": "2.2.*",
-        "jms/serializer-bundle": "dev-master"
+        "jms/serializer-bundle": "dev-master",
+        "a2lix/translation-form-bundle": "1.*@dev"
     },
     "require-dev": {
         "doctrine/orm":      "~2.2",
