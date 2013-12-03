@@ -22,7 +22,7 @@ class LocationManager
 
     public function findCountryByIso($isoCode)
     {
-        return $this->countryRepository->findOne(array('isoCode' => $isoCode, 'enabled' => true));
+        return $this->countryRepository->findOneBy(array('isoCode' => $isoCode, 'enabled' => true));
     }
 
     public function findProvinceByIso($isoCode)
