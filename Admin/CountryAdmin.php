@@ -43,6 +43,10 @@ class CountryAdmin extends Admin
     {
         $datagridMapper
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('enabled', null, array(
+                    'label' => $this->trans('enabled', array(), 'location-bundle'),
+                    'editable' => true
+                ))
         ;
     }
 
@@ -52,6 +56,10 @@ class CountryAdmin extends Admin
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
                 ->add('isoCode', null, array(
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
+                ))
+                ->add('enabled', null, array(
+                    'label' => $this->trans('enabled', array(), 'location-bundle'),
+                    'editable' => true
                 ))
         ;
     }
