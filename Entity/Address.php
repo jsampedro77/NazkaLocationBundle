@@ -32,7 +32,6 @@ class Address
     /**
      * @var string $name
      * @ORM\Column(name="address", type="string", length=255, nullable=true)
-     * @Assert\NotNull()
      * @Serializer\Groups({"details"})
      */
     protected $address;
@@ -40,7 +39,6 @@ class Address
     /**
      * @var string $city
      * @ORM\Column(name="city", type="string", length=255, nullable=true)
-     * @Assert\NotNull()
      * @Serializer\Groups({"details"})
      */
     protected $city;
@@ -48,7 +46,6 @@ class Address
     /**
      * @var string $postalCode
      * @ORM\Column(name="postal_code", type="string", length=255, nullable=true)
-     * @Assert\NotNull()
      * @Serializer\Groups({"details"})
      */
     protected $postalCode;
