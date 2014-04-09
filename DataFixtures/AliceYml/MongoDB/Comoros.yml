@@ -1,0 +1,1 @@
+{ Nazka\LocationBundle\Document\Country: { country_KM: { name: Comoros, isoCode: KM } }, Nazka\LocationBundle\Document\Province: { province_KM-A: { name: Anjouan, country: '@country_KM', isoCode: KM-A }, province_KM-G: { name: 'Grande Comore', country: '@country_KM', isoCode: KM-G }, province_KM-M: { name: Mohéli, country: '@country_KM', isoCode: KM-M } } }

@@ -14,6 +14,7 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class NazkaLocationExtension extends Extension
 {
+
     /**
      * {@inheritDoc}
      */
@@ -22,7 +23,11 @@ class NazkaLocationExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
+
+        if ($config['sonata_admin']['enabled']) {
+            $loader->load($config['manager'] .'_admin.yml');
+        }
     }
 }

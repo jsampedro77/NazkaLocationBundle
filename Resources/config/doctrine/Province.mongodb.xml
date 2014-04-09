@@ -4,15 +4,21 @@
                         xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
                     http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
 
-    <document name="Nazka\LocationBundle\Document\Province">
+    <document name="Nazka\LocationBundle\Document\Province" collection="provinces">
         <field fieldName="id" id="true" />
         <field fieldName="name" type="string"/>
         <field fieldName="isoCode" type="string"/>
-        <reference-many target-document="Address" field="addresses">
+        <reference-many target-document="Nazka\LocationBundle\Document\Address" field="addresses">
             <cascade>
                 <all />
             </cascade>
         </reference-many>
+        
+        <reference-one target-document="Nazka\LocationBundle\Document\Country" field="country">
+                        <cascade>
+                <all />
+            </cascade>
+        </reference-one>
     </document>
 
 </doctrine-mongo-mapping>

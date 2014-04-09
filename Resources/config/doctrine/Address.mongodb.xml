@@ -5,19 +5,19 @@
                         xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
                     http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
     
-    <document name="Nazka\LocationBundle\Document\Address">
+    <document name="Nazka\LocationBundle\Document\Address" collection="addresses">
         <field fieldName="id" id="true" />
         <field fieldName="name" type="string" />
         <field fieldName="address" type="string"/>
         <field fieldName="city" type="string" />
         <field fieldName="postalCode" type="string"/>
-        <reference-one target-document="Province" field="province">
+        <reference-one target-document="Nazka\LocationBundle\Document\Province" field="province">
             <cascade>
                 <all />
             </cascade>
         </reference-one>
 
-        <reference-one target-document="Country" field="country">
+        <reference-one target-document="Nazka\LocationBundle\Document\Country" field="country">
             <cascade>
                 <all />
             </cascade>

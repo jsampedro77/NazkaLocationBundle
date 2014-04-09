@@ -84,11 +84,6 @@ class Province
         return $this->isoCode;
     }
 
-    public function __construct()
-    {
-
-    }
-
     /**
      * Set country
      *
@@ -97,6 +92,7 @@ class Province
     public function setCountry(\Nazka\LocationBundle\Model\Country $country)
     {
         $this->country = $country;
+        $country->addProvince($this);
     }
 
     /**

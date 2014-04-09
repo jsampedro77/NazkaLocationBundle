@@ -1,0 +1,1 @@
+{ Nazka\LocationBundle\Document\Country: { country_TJ: { name: Tajikistan, isoCode: TJ } }, Nazka\LocationBundle\Document\Province: { province_TJ-GB: { name: Gorno-Badakhshan, country: '@country_TJ', isoCode: TJ-GB }, province_TJ-KT: { name: Khatlon, country: '@country_TJ', isoCode: TJ-KT }, province_TJ-SU: { name: Sughd, country: '@country_TJ', isoCode: TJ-SU } } }

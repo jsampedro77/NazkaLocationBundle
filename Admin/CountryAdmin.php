@@ -73,22 +73,22 @@ class CountryAdmin extends Admin
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
                 ))
                 ->add('enabled', null, array(
-                    'label' => $this->trans('enabled', array(), 'location-bundle')
+                    'label' => $this->trans('enabled', array(), 'location-bundle'),
+                    'required' => false
                 ))
-                ->add('translations', 'a2lix_translations_gedmo', array('translatable_class' => $this->getClass(),
-                    'by_reference' => false,
-                    'fields' => array(
-                        'name' => array('label' => $this->trans('name', array(), 'location-bundle')),
-            )))
+//                ->add('translations', 'a2lix_translations_gedmo', array('translatable_class' => $this->getClass(),
+//                    'by_reference' => false,
+//                    'fields' => array(
+//                        'name' => array('label' => $this->trans('name', array(), 'location-bundle')),
+//            )))
+                
                 ->add('provinces', 'sonata_type_collection', array(
                     'required' => false,
                     'by_reference' => false,
                     'label' => $this->trans('provinces', array(), 'location-bundle')
                         ), array(
                     'edit' => 'inline',
-                    'inline' => 'table',
-                    'link_parameters' => array('context' => 'default'),
-                    'help' => $this->trans('add.province', array(), 'location-bundle')
+                    'inline' => 'table'
                         )
                 )
         ;

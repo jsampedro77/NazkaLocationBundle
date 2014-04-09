@@ -27,7 +27,9 @@ class Country implements Translatable
      * @Serializer\Groups({"details"})
      */
     protected $isoCode;
+    
     protected $provinces;
+    
     protected $addresses;
 
     /**
@@ -38,8 +40,6 @@ class Country implements Translatable
 
     /**
      * @Gedmo\Locale
-     * Used locale to override Translation listener`s locale
-     * this is not a mapped field of entity metadata, just a simple property
      */
     private $locale;
 
@@ -127,12 +127,11 @@ class Country implements Translatable
     public function addAddress(\Nazka\LocationBundle\Model\Address $address)
     {
         $this->addresses[] = $address;
-        $address->setCountry($this);
     }
 
     /**
      *
-     * @return type
+     * @return Nazka\LocationBundle\Model\Province
      */
     public function getProvinces()
     {
@@ -147,12 +146,11 @@ class Country implements Translatable
     public function addProvince(\Nazka\LocationBundle\Model\Province $provinces)
     {
         $this->provinces[] = $provinces;
-        $provinces->setCountry($this);
     }
 
-    public function addProvinces(\Nazka\LocationBundle\Model\Province $provinces)
+    public function removeProvince(\Nazka\LocationBundle\Model\Province $provinces)
     {
-        $this->addProvince($provinces);
+        $this->provinces->removeElement($provinces);
     }
 
     public function __toString()

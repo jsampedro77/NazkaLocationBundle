@@ -1,0 +1,1 @@
+{ Nazka\LocationBundle\Document\Country: { country_KI: { name: Kiribati, isoCode: KI } }, Nazka\LocationBundle\Document\Province: { province_KI-G: { name: 'Gilbert Islands', country: '@country_KI', isoCode: KI-G }, province_KI-L: { name: 'Line Islands', country: '@country_KI', isoCode: KI-L }, province_KI-P: { name: 'Phoenix Islands', country: '@country_KI', isoCode: KI-P } } }

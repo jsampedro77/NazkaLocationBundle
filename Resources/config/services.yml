@@ -1,6 +1,3 @@
-imports:
-    - { resource: admin.yml }
-
 parameters:
     nazka_location.province.repository.class: Doctrine\ORM\EntityRepository
     nazka_location.country.repository.class: Doctrine\ORM\EntityRepository

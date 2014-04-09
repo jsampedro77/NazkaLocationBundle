@@ -11,6 +11,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class ProvinceAdmin extends Admin
 {
+
     //Last components first in List
     protected $datagridValues = array(
         '_page' => 1,
@@ -27,6 +28,9 @@ class ProvinceAdmin extends Admin
                 ->addIdentifier('isoCode', null, array(
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
                 ))
+                ->add('country', null, array(
+                    'label' => $this->trans('country', array(), 'location-bundle')
+                ))
         ;
     }
 
@@ -34,6 +38,9 @@ class ProvinceAdmin extends Admin
     {
         $datagridMapper
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('country', null, array(
+                    'label' => $this->trans('country', array(), 'location-bundle')
+                ))
         ;
     }
 

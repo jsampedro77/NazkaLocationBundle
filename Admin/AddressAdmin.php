@@ -11,6 +11,7 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class AddressAdmin extends Admin
 {
+
 //Last components first in List
     protected $datagridValues = array(
         '_page' => 1,
@@ -29,6 +30,10 @@ class AddressAdmin extends Admin
                 ->addIdentifier('name', null, array(
                     'label' => $this->trans('name', array(), 'location-bundle')
                 ))
+                ->add('address', null, array('label' => $this->trans('address', array(), 'location-bundle')))
+                ->add('city', null, array('label' => $this->trans('city', array(), 'location-bundle')))
+                ->add('country', null, array('label' => $this->trans('country', array(), 'location-bundle')))
+                ->add('province', null, array('label' => $this->trans('zone', array(), 'location-bundle')))
         ;
     }
 
@@ -36,6 +41,12 @@ class AddressAdmin extends Admin
     {
         $datagridMapper
                 ->add('name', null, array('label' => $this->trans('name', array(), 'location-bundle')))
+                ->add('address', null, array('label' => $this->trans('address', array(), 'location-bundle')))
+                ->add('city', null, array('label' => $this->trans('city', array(), 'location-bundle')))
+                ->add('postalCode', null, array('label' => $this->trans('postal.code', array(), 'location-bundle')))
+                ->add('country', null, array('label' => $this->trans('country', array(), 'location-bundle')))
+                ->add('province', null, array('label' => $this->trans('zone', array(), 'location-bundle')))
+
         ;
     }
 
@@ -59,13 +70,13 @@ class AddressAdmin extends Admin
                 ->add('address', null, array('label' => $this->trans('address', array(), 'location-bundle')))
                 ->add('city', null, array('label' => $this->trans('city', array(), 'location-bundle')))
                 ->add('postalCode', null, array('label' => $this->trans('postal.code', array(), 'location-bundle')))
-                ->add('country', 'genemu_jqueryselect2_entity', array(
+                ->add('country', 'sonata_type_model', array(
                     'label' => $this->trans('country', array(), 'location-bundle'),
-                    'class' => 'Nazka\LocationBundle\Entity\Country'
+                    'btn_add' => false
                 ))
-                ->add('province', 'genemu_jqueryselect2_entity', array(
+                ->add('province', 'sonata_type_model', array(
                     'label' => $this->trans('province', array(), 'location-bundle'),
-                    'class' => 'Nazka\LocationBundle\Entity\Province'
+                    'btn_add' => false
                 ))
         ;
     }

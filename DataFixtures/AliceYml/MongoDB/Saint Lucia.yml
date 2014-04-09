@@ -1,0 +1,1 @@
+{ Nazka\LocationBundle\Document\Country: { country_LC: { name: 'Saint Lucia', isoCode: LC } }, Nazka\LocationBundle\Document\Province: { province_LC11: { name: 'Gros Islet', country: '@country_LC', isoCode: LC11 } } }

@@ -136,6 +136,7 @@ class Address
     public function setCountry(\Nazka\LocationBundle\Model\Country $country = null)
     {
         $this->country = $country;
+        $country->addAddress($this);
 
         return $this;
     }

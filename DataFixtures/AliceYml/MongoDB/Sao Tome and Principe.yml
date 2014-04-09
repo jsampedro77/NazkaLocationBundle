@@ -1,0 +1,1 @@
+{ Nazka\LocationBundle\Document\Country: { country_ST: { name: 'Sao Tome and Principe', isoCode: ST } }, Nazka\LocationBundle\Document\Province: { province_ST-P: { name: Príncipe, country: '@country_ST', isoCode: ST-P }, province_ST-S: { name: 'São Tomé', country: '@country_ST', isoCode: ST-S } } }
