@@ -1,18 +1,18 @@
-services:
-   nazka.location.admin.country:
-      class: Nazka\LocationBundle\Admin\CountryAdmin
-      tags:
-        - { name: sonata.admin, manager_type: orm, label: Paises }
-      arguments: [null, Nazka\LocationBundle\Entity\Country, SonataAdminBundle:CRUD]
-
-   nazka.location.admin.province:
-      class: Nazka\LocationBundle\Admin\ProvinceAdmin
-      tags:
-        - { name: sonata.admin, manager_type: orm, label: Provincias }
-      arguments: [null, Nazka\LocationBundle\Entity\Province, SonataAdminBundle:CRUD]
-
-   nazka.location.admin.address:
-      class: Nazka\LocationBundle\Admin\AddressAdmin
-      tags:
-        - { name: sonata.admin, manager_type: orm, label: Direcciones }
-      arguments: [null, Nazka\LocationBundle\Entity\Address, SonataAdminBundle:CRUD]
+#services:
+#   nazka.location.admin.country:
+#      class: Nazka\LocationBundle\Admin\CountryAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, label: Paises }
+#      arguments: [null, Nazka\LocationBundle\Entity\Country, SonataAdminBundle:CRUD]
+#
+#   nazka.location.admin.province:
+#      class: Nazka\LocationBundle\Admin\ProvinceAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, label: Provincias }
+#      arguments: [null, Nazka\LocationBundle\Entity\Province, SonataAdminBundle:CRUD]
+#
+#   nazka.location.admin.address:
+#      class: Nazka\LocationBundle\Admin\AddressAdmin
+#      tags:
+#        - { name: sonata.admin, manager_type: orm, label: Direcciones }
+#      arguments: [null, Nazka\LocationBundle\Entity\Address, SonataAdminBundle:CRUD]

@@ -17,9 +17,7 @@
         "symfony/framework-bundle":        "~2.3",
         "stof/doctrine-extensions-bundle": "1.1.*",
         "friendsofsymfony/jsrouting-bundle": "@stable",
-        "genemu/form-bundle": "2.2.*",
-        "jms/serializer-bundle": "dev-master",
-        "a2lix/translation-form-bundle": "1.*@dev"
+        "jms/serializer-bundle": "dev-master"
     },
     "require-dev": {
         "doctrine/orm":      "~2.2",
@@ -35,7 +33,7 @@
     "target-dir": "Nazka/LocationBundle",
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1.x-dev"
+            "dev-master": "0.2.x-dev"
         }
     }
 }
