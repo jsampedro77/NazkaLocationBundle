@@ -127,6 +127,7 @@ class Country implements Translatable
     public function addAddress(\Nazka\LocationBundle\Model\Address $address)
     {
         $this->addresses[] = $address;
+        $address->setCountry($this);
     }
 
     /**
@@ -146,6 +147,7 @@ class Country implements Translatable
     public function addProvince(\Nazka\LocationBundle\Model\Province $provinces)
     {
         $this->provinces[] = $provinces;
+        $provinces->setCountry($this);
     }
 
     public function removeProvince(\Nazka\LocationBundle\Model\Province $provinces)

@@ -92,7 +92,6 @@ class Province
     public function setCountry(\Nazka\LocationBundle\Model\Country $country)
     {
         $this->country = $country;
-        $country->addProvince($this);
     }
 
     /**

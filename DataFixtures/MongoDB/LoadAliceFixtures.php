@@ -17,6 +17,20 @@ class LoadAliceFixtures extends AbstractLoader implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        return $this->loadFolder($manager, __DIR__ . '/../AliceYml/MongoDB');
+        $this->loadFolder($manager, __DIR__ . '/../AliceYml/MongoDB');
+
+        $countries = $manager->getRepository('NazkaLocationBundle:Country')->findAll();
+
+        //relate provinces to countries, not done in fixtures
+        foreach ($countries as $country) {
+            $provinces = $manager->getRepository('NazkaLocationBundle:Province')->findBy(array('country.id' => $country->getId()));
+
+            foreach ($provinces as $province) {
+                $country->addProvince($province);
+            }
+            $manager->persist($country);
+        }
+
+        $manager->flush();
     }
 }
