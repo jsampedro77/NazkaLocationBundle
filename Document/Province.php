@@ -1,6 +1,6 @@
 <?php
 
-namespace Nazka\LocationBundle\Entity;
+namespace Nazka\LocationBundle\Document;
 
 use Nazka\LocationBundle\Model\Province as BaseProvince;
 
