@@ -19,24 +19,28 @@ class Address
     /**
      * @var string $name
      * @Serializer\Groups({"details"})
+     * @Assert\NotBlank()
      */
     protected $address;
 
     /**
      * @var string $city
      * @Serializer\Groups({"details"})
+     * @Assert\NotBlank()
      */
     protected $city;
 
     /**
      * @var string $postalCode
      * @Serializer\Groups({"details"})
+     * @Assert\NotBlank()
      */
     protected $postalCode;
 
     /**
      * @var country
      * @Assert\NotNull()
+     * @Assert\Valid()
      * @Serializer\Groups({"details"})
      */
     protected $country;
@@ -44,6 +48,7 @@ class Address
     /**
      * @var $province
      * @Assert\NotNull()
+     * @Assert\Valid()
      * @Serializer\Groups({"details"})
      */
     protected $province;
