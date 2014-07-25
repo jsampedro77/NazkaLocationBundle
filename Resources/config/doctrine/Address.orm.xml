@@ -8,7 +8,7 @@
     <field name="address" type="string" column="address" length="255" precision="0" scale="0" nullable="true"/>
     <field name="city" type="string" column="city" length="255" precision="0" scale="0" nullable="true"/>
     <field name="postalCode" type="string" column="postal_code" length="255" precision="0" scale="0" nullable="true"/>
-    <many-to-one field="province" target-entity="Nazka\LocationBundle\Entity\Province" inversed-by="addresses">
+    <many-to-one field="province" target-entity="Nazka\LocationBundle\Entity\Province" inversed-by="addresses" fetch="EAGER">
       <join-columns>
         <join-column name="province_id" referenced-column-name="id" nullable="1"/>
       </join-columns>
@@ -16,7 +16,7 @@
         <cascade-persist/>
       </cascade>
     </many-to-one>
-    <many-to-one field="country" target-entity="Nazka\LocationBundle\Entity\Country" inversed-by="addresses">
+    <many-to-one field="country" target-entity="Nazka\LocationBundle\Entity\Country" inversed-by="addresses" fetch="EAGER">
       <join-columns>
         <join-column name="country_id" referenced-column-name="id" nullable="1"/>
       </join-columns>
