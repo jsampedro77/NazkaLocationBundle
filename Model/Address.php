@@ -47,7 +47,7 @@ class Address
 
     /**
      * @var $province
-     * @Assert\NotNull()
+     * @Assert\NotNull(groups={"province"})
      * @Assert\Valid()
      * @Serializer\Groups({"details"})
      */
