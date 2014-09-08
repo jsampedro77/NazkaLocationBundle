@@ -42,7 +42,7 @@ class Country implements Translatable
      * @var integer
      * @Serializer\Groups({"details"})
      */
-    protected $order;
+    protected $priority;
 
     /**
      * @Gedmo\Locale
@@ -80,23 +80,23 @@ class Country implements Translatable
     }
 
     /**
-     * Set order
+     * Set priority
      *
-     * @param string $order
+     * @param string $priority
      */
-    public function setOrder($order)
+    public function setOrder($priority)
     {
-        $this->order = $order;
+        $this->priority = $priority;
     }
 
     /**
-     * Get order
+     * Get priority
      *
      * @return string
      */
-    public function getOrder()
+    public function getPriority()
     {
-        return $this->order;
+        return $this->priority;
     }
     
     /**

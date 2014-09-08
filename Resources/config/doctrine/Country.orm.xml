@@ -7,6 +7,7 @@
     <field name="name" type="string" column="name" length="255" precision="0" scale="0" nullable="false"/>
     <field name="isoCode" type="string" column="iso_code" length="2" precision="0" scale="0" nullable="false"/>
     <field name="enabled" type="boolean" column="enabled" precision="0" scale="0" nullable="false"/>
+    <field name="priority" type="integer" column="priority" nullable="true"/>
     <one-to-many field="addresses" target-entity="Nazka\LocationBundle\Entity\Address" mapped-by="country"/>
     <one-to-many field="provinces" target-entity="Nazka\LocationBundle\Entity\Province" mapped-by="country" orphan-removal="true">
       <cascade>

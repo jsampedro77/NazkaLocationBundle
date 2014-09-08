@@ -32,9 +32,9 @@ class CountryAdmin extends Admin
                 ->addIdentifier('isoCode', null, array(
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
                 ))
-                ->addIdentifier('order', null, array(
+                ->addIdentifier('priority', null, array(
                     /** @Ignore */
-                    'label' => $this->trans('order', array(), 'location-bundle')
+                    'label' => $this->trans('priority', array(), 'location-bundle')
                 ))
                 ->add('enabled', null, array(
                     'label' => $this->trans('enabled', array(), 'location-bundle'),
@@ -76,8 +76,8 @@ class CountryAdmin extends Admin
                 ->add('isoCode', null, array(
                     'label' => $this->trans('iso.code', array(), 'location-bundle')
                 ))
-                ->add('order', null, array(
-                    'label' => $this->trans('order', array(), 'location-bundle')
+                ->add('priority', null, array(
+                    'label' => $this->trans('priority', array(), 'location-bundle')
                 ))
                 ->add('enabled', null, array(
                     'label' => $this->trans('enabled', array(), 'location-bundle'),

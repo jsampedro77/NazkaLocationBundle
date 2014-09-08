@@ -9,6 +9,7 @@
         <field fieldName="name" type="string" />
         <field fieldName="isoCode" type="string"/>
         <field fieldName="enabled" type="boolean"/>
+	<field fieldName="priority" type="integer"/>
         <reference-many target-document="Nazka\LocationBundle\Document\Address" field="addresses">
             <cascade>
                 <all />
