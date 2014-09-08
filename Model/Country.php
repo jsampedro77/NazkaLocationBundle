@@ -39,6 +39,12 @@ class Country implements Translatable
     protected $enabled = false;
 
     /**
+     * @var integer
+     * @Serializer\Groups({"details"})
+     */
+    protected $order;
+
+    /**
      * @Gedmo\Locale
      */
     private $locale;
@@ -73,6 +79,26 @@ class Country implements Translatable
         return $this->name;
     }
 
+    /**
+     * Set order
+     *
+     * @param string $order
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+    }
+
+    /**
+     * Get order
+     *
+     * @return string
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+    
     /**
      * Set isoCode
      *
