@@ -84,7 +84,7 @@ class Country implements Translatable
      *
      * @param string $priority
      */
-    public function setOrder($priority)
+    public function setPriority($priority)
     {
         $this->priority = $priority;
     }
