@@ -2,7 +2,8 @@
 
 namespace Nazka\LocationBundle\Manager;
 
-use Doctrine\ORM\EntityRepository;
+use Doctrine\Common\Persistence\ObjectRepository;
+
 
 /**
  * Description of LocationManager
@@ -14,7 +15,7 @@ class LocationManager
     protected $countryRepository;
     protected $provinceRepository;
 
-    public function __construct(EntityRepository $countryRepository, EntityRepository $provinceRepository)
+    public function __construct(ObjectRepository $countryRepository, ObjectRepository $provinceRepository)
     {
         $this->countryRepository = $countryRepository;
         $this->provinceRepository = $provinceRepository;

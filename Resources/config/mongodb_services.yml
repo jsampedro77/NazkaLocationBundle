@@ -1,0 +1,24 @@
+imports:
+    - { resource: services.yml }
+
+parameters:
+    nazka_location.province.repository.class: Doctrine\ODM\MongoDB\DocumentRepository
+    nazka_location.country.repository.class: Doctrine\ODM\MongoDB\DocumentRepository
+    nazka_location.province.class: Nazka\LocationBundle\Document\Province
+    nazka_location.country.class: Nazka\LocationBundle\Document\Country
+
+services:
+    #Repositories
+    nazka_location.province.repository:
+        class:           %nazka_location.province.repository.class%
+        factory_service: doctrine.odm.mongodb.document_manager
+        factory_method:  getRepository
+        arguments:
+            - %nazka_location.province.class%
+
+    nazka_location.country.repository:
+        class:           %nazka_location.country.repository.class%
+        factory_service: doctrine.odm.mongodb.document_manager
+        factory_method:  getRepository
+        arguments:
+            - %nazka_location.country.class%
