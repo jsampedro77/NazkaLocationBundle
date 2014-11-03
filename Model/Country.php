@@ -11,25 +11,27 @@ class Country implements Translatable
 
     /**
      * @var integer $id
-     *
+     * @Serializer\Groups({"details", "filter"})
      */
     protected $id;
 
     /**
      * @var string $name
      * @Gedmo\Translatable
-     * @Serializer\Groups({"details"})
+     * @Serializer\Groups({"details", "filter"})
      */
     protected $name;
 
     /**
      * @var string $name
-     * @Serializer\Groups({"details"})
+     * @Serializer\Groups({"details", "filter"})
      */
     protected $isoCode;
-    
+    /**
+     * @Serializer\Groups({"details", "filter"})
+     */
     protected $provinces;
-    
+
     protected $addresses;
 
     /**
@@ -98,7 +100,7 @@ class Country implements Translatable
     {
         return $this->priority;
     }
-    
+
     /**
      * Set isoCode
      *
@@ -147,7 +149,7 @@ class Country implements Translatable
 
     /**
      * Add Address
-     * 
+     *
      * @param \Nazka\LocationBundle\Model\Address $address
      */
     public function addAddress(\Nazka\LocationBundle\Model\Address $address)
@@ -183,7 +185,7 @@ class Country implements Translatable
 
     public function __toString()
     {
-        return $this->getName()? : '---';
+        return $this->getName() ?: '---';
     }
 
     public function setTranslatableLocale($locale)

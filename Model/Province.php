@@ -18,13 +18,13 @@ class Province
 
     /**
      * @var string $name
-     * @Serializer\Groups({"details", "list"})
+     * @Serializer\Groups({"details", "list", "filter"})
      */
     protected $name;
 
     /**
      * @var string $name
-     * @Serializer\Groups({"details", "list"})
+     * @Serializer\Groups({"details", "list", "filter"})
      */
     protected $isoCode;
 
