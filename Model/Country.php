@@ -24,7 +24,7 @@ class Country implements Translatable
 
     /**
      * @var string $name
-     * @Serializer\Groups({"details", "filter"})
+     * @Serializer\Groups({"details"})
      */
     protected $isoCode;
     /**

@@ -12,7 +12,7 @@ class Province
 {
     /**
      * @var integer $id
-     * @Serializer\Groups({"details", "list"})
+     * @Serializer\Groups({"details", "list", "filter"})
      */
     protected $id;
 
@@ -24,7 +24,7 @@ class Province
 
     /**
      * @var string $name
-     * @Serializer\Groups({"details", "list", "filter"})
+     * @Serializer\Groups({"details", "list"})
      */
     protected $isoCode;
 
