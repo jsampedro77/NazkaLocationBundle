@@ -83,12 +83,6 @@ class CountryAdmin extends Admin
                     'label' => $this->trans('enabled', array(), 'location-bundle'),
                     'required' => false
                 ))
-//                ->add('translations', 'a2lix_translations_gedmo', array('translatable_class' => $this->getClass(),
-//                    'by_reference' => false,
-//                    'fields' => array(
-//                        'name' => array('label' => $this->trans('name', array(), 'location-bundle')),
-//            )))
-                
                 ->add('provinces', 'sonata_type_collection', array(
                     'required' => false,
                     'by_reference' => false,

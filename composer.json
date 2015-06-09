@@ -6,8 +6,7 @@
     "authors": [
         {
             "name": "Javier Sampedro",
-            "email": "jsampedro77@gmail.com",
-            "homepage": "http://sampedrobcn.es"
+            "email": "jsampedro77@gmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -15,7 +14,6 @@
         "php": ">=5.3.3",
 
         "symfony/framework-bundle":        "~2.3",
-        "stof/doctrine-extensions-bundle": "*",
         "friendsofsymfony/jsrouting-bundle": "@stable",
         "jms/serializer-bundle": "~0.12"
     },

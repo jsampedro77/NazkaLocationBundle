@@ -2,11 +2,10 @@
 
 namespace Nazka\LocationBundle\Model;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-use Gedmo\Translatable\Translatable;
+use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as Serializer;
 
-class Country implements Translatable
+class Country
 {
 
     /**
@@ -17,7 +16,6 @@ class Country implements Translatable
 
     /**
      * @var string $name
-     * @Gedmo\Translatable
      * @Serializer\Groups({"details", "filter"})
      */
     protected $name;
@@ -45,11 +43,6 @@ class Country implements Translatable
      * @Serializer\Groups({"details"})
      */
     protected $priority;
-
-    /**
-     * @Gedmo\Locale
-     */
-    private $locale;
 
     /**
      * Get id
@@ -143,8 +136,8 @@ class Country implements Translatable
 
     public function __construct()
     {
-        $this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->provinces = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->addresses = new ArrayCollection();
+        $this->provinces = new ArrayCollection();
     }
 
     /**
@@ -188,8 +181,4 @@ class Country implements Translatable
         return $this->getName() ?: '---';
     }
 
-    public function setTranslatableLocale($locale)
-    {
-        $this->locale = $locale;
-    }
 }
