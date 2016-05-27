@@ -19,14 +19,12 @@ class Address
     /**
      * @var string $name
      * @Serializer\Groups({"details"})
-     * @Assert\NotBlank()
      */
     protected $address;
 
     /**
      * @var string $city
      * @Serializer\Groups({"details"})
-     * @Assert\NotBlank()
      */
     protected $city;
 
