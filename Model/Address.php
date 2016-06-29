@@ -31,7 +31,6 @@ class Address
     /**
      * @var string $postalCode
      * @Serializer\Groups({"details"})
-     * @Assert\NotBlank()
      */
     protected $postalCode;
 
@@ -54,7 +53,7 @@ class Address
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -77,7 +76,7 @@ class Address
     /**
      * Get address
      *
-     * @return string 
+     * @return string
      */
     public function getAddress()
     {
@@ -100,7 +99,7 @@ class Address
     /**
      * Get city
      *
-     * @return string 
+     * @return string
      */
     public function getCity()
     {
@@ -123,7 +122,7 @@ class Address
     /**
      * Get postalCode
      *
-     * @return string 
+     * @return string
      */
     public function getPostalCode()
     {
@@ -146,7 +145,7 @@ class Address
     /**
      * Get country
      *
-     * @return \Nazka\LocationBundle\Model\Country 
+     * @return \Nazka\LocationBundle\Model\Country
      */
     public function getCountry()
     {
@@ -192,7 +191,7 @@ class Address
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -202,7 +201,14 @@ class Address
     public function __toString()
     {
         if ($this->getId()) {
-            return sprintf("[%s] %s, %s, (%s, %s)", $this->getName(), $this->getAddress(), $this->getCity(), $this->getProvince(), $this->getCountry());
+            return sprintf(
+                "[%s] %s, %s, (%s, %s)",
+                $this->getName(),
+                $this->getAddress(),
+                $this->getCity(),
+                $this->getProvince(),
+                $this->getCountry()
+            );
         } else {
             return 'new';
         }
