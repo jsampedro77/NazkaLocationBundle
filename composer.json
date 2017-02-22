@@ -15,7 +15,7 @@
 
         "symfony/framework-bundle":        "~2.3",
         "friendsofsymfony/jsrouting-bundle": "@stable",
-        "jms/serializer-bundle": "~0.12"
+        "jms/serializer-bundle": "^1.1.0"
     },
     "require-dev": {
         "doctrine/orm":      "~2.2",
